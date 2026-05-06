@@ -1,37 +1,44 @@
 ---
 layout: default
 title: Updates
-description: News, events, and updates from the English Students' Society.
+description: The English Students' Society is proud to host many events each academic year. From study sessions to year-end parties and conferences, the ESS loves to engage its members.
 ---
 
+<div class="blog-header">
+  <div class="wrap">
+    <span class="eyebrow">Blog</span>
+    <h1>News &amp; Updates</h1>
+    <p style="color:var(--muted);max-width:520px;margin-top:.5rem;font-size:.97rem;">From study sessions to year-end celebrations, stay in the loop with everything happening at ESS.</p>
+  </div>
+</div>
+
 <section class="section">
-  <div class="container">
-    <div class="section-header">
-      <p class="section-label">Blog</p>
-      <h1>News &amp; Updates</h1>
-      <p>Stay up to date with the latest ESS events, announcements, and opportunities.</p>
-    </div>
-    <div class="posts-grid">
+  <div class="wrap">
+    {% if site.posts.size > 0 %}
+    <div class="cards">
       {% for post in site.posts %}
-      <article class="post-card">
+      <article class="card">
         {% if post.image %}
-        <div class="post-card__image">
-          <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+        <div class="card__thumb">
+          <img src="{{ post.image }}" alt="{{ post.title }}">
         </div>
         {% endif %}
-        <div class="post-card__body">
-          <p class="post-card__date">{{ post.date | date: "%B %-d, %Y" }}</p>
-          <h3 class="post-card__title">{{ post.title }}</h3>
+        <div class="card__body">
+          <div class="card__meta">
+            <span>{{ post.date | date: "%B %-d, %Y" }}</span>
+            {% if post.category %}<span class="card__tag">{{ post.category }}</span>{% endif %}
+          </div>
+          <h3 class="card__title">{{ post.title }}</h3>
           {% if post.excerpt %}
-          <p class="post-card__excerpt">{{ post.excerpt | strip_html | truncate: 120 }}</p>
+          <p class="card__excerpt">{{ post.excerpt | strip_html | truncate: 130 }}</p>
           {% endif %}
-          <a href="{{ post.url | relative_url }}" class="post-card__link">Read More →</a>
+          <a href="{{ post.url | relative_url }}" class="card__link">Read More →</a>
         </div>
       </article>
       {% endfor %}
-      {% if site.posts.size == 0 %}
-      <p style="color:var(--color-text-muted);">No updates yet — check back soon!</p>
-      {% endif %}
     </div>
+    {% else %}
+    <p style="color:var(--muted);text-align:center;padding:3rem 0;">No updates yet — check back soon!</p>
+    {% endif %}
   </div>
 </section>

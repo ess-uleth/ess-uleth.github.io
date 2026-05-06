@@ -1,50 +1,76 @@
 ---
 layout: default
 title: About
-description: The English Students' Society is the official Uleth club for anyone interested in Literature, writing, language, and more.
+description: The English Students' Society is the official ULeth club for anyone interested in Literature, writing, language, and more. We strive to foster a sense of community among our members.
 ---
 
-<section class="hero" style="min-height:280px;">
-  <img class="hero__bg" src="{{ '/assets/images/about-bg.jpg' | relative_url }}" alt="">
+<!-- HERO -->
+<section class="hero hero--short">
+  <img class="hero__bg"
+       src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1400&q=80"
+       alt="">
   <div class="hero__overlay"></div>
-  <div class="container hero__content" style="padding-top:4rem;padding-bottom:4rem;">
-    <p class="section-label" style="color:var(--color-accent-light);">Who We Are</p>
+  <div class="hero__body wrap">
+    <span class="eyebrow" style="color:var(--accent-light);">Who We Are</span>
     <h1>Welcome to ESS</h1>
   </div>
 </section>
 
+<!-- ABOUT INTRO -->
 <section class="section">
-  <div class="container">
-    <div class="prose">
-      <p>The English Students' Society includes all and any interested in English at the University of Lethbridge. Run by students, for students, the ESS works to enhance the academic and social experience of those studying literature, writing, and language. We organize events, share opportunities, and advocate for student needs within the department. Whether through workshops, community-building activities, or connecting students with academic and professional resources, the ESS aims to create a space where students feel supported, engaged, and confident in their studies.</p>
+  <div class="wrap">
+    <div class="split">
+      <div class="split__text">
+        <span class="eyebrow">About Us</span>
+        <h2>Run by Students, for Students</h2>
+        <p>The English Students' Society includes all and any interested in English at the University of Lethbridge. The ESS works to enhance the academic and social experience of those studying literature, writing, and language.</p>
+        <p>We organize events, share opportunities, and advocate for student needs within the department. Whether through workshops, community-building activities, or connecting students with academic and professional resources, the ESS aims to create a space where students feel supported, engaged, and confident in their studies.</p>
+        <a href="{{ '/contact/' | relative_url }}" class="btn btn--outline">Get Involved</a>
+      </div>
+      <div class="split__media">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=900&q=80"
+             alt="Students in discussion">
+      </div>
     </div>
   </div>
 </section>
 
+<!-- EXECUTIVE TEAM -->
 <section class="section section--alt">
-  <div class="container">
-    <div class="section-header">
-      <p class="section-label">The Team</p>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">The Team</span>
       <h2>Executive Team</h2>
+      <p>Meet the students who make the ESS run. Interested in joining the executive? <a href="{{ '/contact/' | relative_url }}">Reach out to us!</a></p>
     </div>
+
     <div class="team-grid">
       <div class="team-card">
-        <img class="team-card__photo" src="{{ '/assets/images/logo.png' | relative_url }}" alt="Claire Rose">
+        <div class="team-card__avatar">
+          <!-- Replace with real photo: <img src="/assets/images/team/claire.jpg" alt="Claire Rose"> -->
+          <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="Claire Rose">
+        </div>
         <p class="team-card__name">Claire Rose</p>
         <p class="team-card__role">Co-President</p>
       </div>
       <div class="team-card">
-        <img class="team-card__photo" src="{{ '/assets/images/logo.png' | relative_url }}" alt="Dara Boras">
+        <div class="team-card__avatar">
+          <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="Dara Boras">
+        </div>
         <p class="team-card__name">Dara Boras</p>
         <p class="team-card__role">Co-President</p>
       </div>
       <div class="team-card">
-        <img class="team-card__photo" src="{{ '/assets/images/logo.png' | relative_url }}" alt="Erika Dewald">
+        <div class="team-card__avatar">
+          <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="Erika Dewald">
+        </div>
         <p class="team-card__name">Erika Dewald</p>
         <p class="team-card__role">VP Communication</p>
       </div>
       <div class="team-card">
-        <img class="team-card__photo" src="{{ '/assets/images/logo.png' | relative_url }}" alt="Jocelyn McKnight">
+        <div class="team-card__avatar">
+          <img src="{{ '/assets/images/logo.png' | relative_url }}" alt="Jocelyn McKnight">
+        </div>
         <p class="team-card__name">Jocelyn McKnight</p>
         <p class="team-card__role">VP Finance</p>
       </div>
@@ -52,13 +78,21 @@ description: The English Students' Society is the official Uleth club for anyone
   </div>
 </section>
 
+<!-- CONSTITUTION -->
 <section class="section">
-  <div class="container">
-    <div class="prose">
-      <p class="section-label">Governance</p>
-      <h2>Constitution</h2>
-      <p>In 2026, the English Students' Society undertook an extensive review and, together, rewrote its constitution. This document is publicly available to the members of the club. A constitution is important because it explains the purpose of the society, outlines the responsibilities of executive members, and establishes the rules and procedures that guide decision-making. It helps ensure that the organization remains fair, transparent, and accountable to its members.</p>
-      <a href="{{ '/assets/constitution.pdf' | relative_url }}" class="btn btn--primary" target="_blank">Download Constitution (PDF)</a>
+  <div class="wrap">
+    <div class="section-head section-head--left" style="margin-bottom:2rem;">
+      <span class="eyebrow">Governance</span>
+      <h2>Our Constitution</h2>
+    </div>
+    <div class="constitution-block">
+      <div class="constitution-block__icon">📜</div>
+      <div class="constitution-block__text">
+        <h3>Publicly Available</h3>
+        <p>In 2026, the English Students' Society undertook an extensive review and, together, rewrote its constitution. This document is publicly available to the members of the club. A constitution is important because it explains the purpose of the society, outlines the responsibilities of executive members, and establishes the rules and procedures that guide decision-making. It helps ensure that the organization remains fair, transparent, and accountable to its members.</p>
+        <!-- Update this link once you host the PDF in assets/constitution.pdf -->
+        <a href="{{ '/assets/constitution.pdf' | relative_url }}" class="btn btn--primary" target="_blank">Download Constitution (PDF)</a>
+      </div>
     </div>
   </div>
 </section>

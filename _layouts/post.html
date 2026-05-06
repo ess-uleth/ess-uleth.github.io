@@ -2,20 +2,63 @@
 layout: default
 ---
 
-<section class="section">
-  <div class="container">
-    <div class="prose">
-      <p class="section-label">Updates</p>
-      <h1>{{ page.title }}</h1>
-      {% if page.date %}
-      <p class="post-card__date" style="margin-bottom:2rem;">
-        {{ page.date | date: "%B %-d, %Y" }}
-      </p>
-      {% endif %}
-      {% if page.image %}
-      <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" style="border-radius:10px;margin-bottom:2rem;width:100%;">
-      {% endif %}
-      {{ content }}
+<article>
+  <section class="section">
+    <div class="wrap">
+      <a href="{{ '/updates/' | relative_url }}" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        All Updates
+      </a>
+
+      <div class="prose">
+        <div class="post-header">
+          <span class="eyebrow">
+            {% if page.category %}{{ page.category }}{% else %}Updates{% endif %}
+          </span>
+          <h1>{{ page.title }}</h1>
+          <div class="post-meta">
+            <span>{{ page.date | date: "%B %-d, %Y" }}</span>
+            {% if page.author %}<span>· {{ page.author }}</span>{% endif %}
+          </div>
+        </div>
+
+        {% if page.image %}
+        <div class="post-hero-img">
+          <img src="{{ page.image }}" alt="{{ page.title }}">
+        </div>
+        {% endif %}
+
+        {{ content }}
+      </div>
+    </div>
+  </section>
+</article>
+
+<!-- Recent posts -->
+<section class="section section--alt" style="padding-top:3rem;padding-bottom:3rem;">
+  <div class="wrap">
+    <div class="section-head section-head--left" style="margin-bottom:1.5rem;">
+      <h2 style="font-size:1.3rem;">More Updates</h2>
+    </div>
+    <div class="cards">
+      {% assign other_posts = site.posts | where_exp: "p", "p.url != page.url" | limit: 3 %}
+      {% for post in other_posts %}
+      <article class="card">
+        {% if post.image %}
+        <div class="card__thumb">
+          <img src="{{ post.image }}" alt="{{ post.title }}">
+        </div>
+        {% endif %}
+        <div class="card__body">
+          <div class="card__meta">
+            <span>{{ post.date | date: "%b %-d, %Y" }}</span>
+            {% if post.category %}<span class="card__tag">{{ post.category }}</span>{% endif %}
+          </div>
+          <h3 class="card__title">{{ post.title }}</h3>
+          <a href="{{ post.url | relative_url }}" class="card__link">Read More →</a>
+        </div>
+      </article>
+      {% endfor %}
     </div>
   </div>
 </section>

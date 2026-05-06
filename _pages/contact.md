@@ -1,4 +1,0 @@
----
-layout: contat
-title: Contact
----
