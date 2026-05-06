@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<section class="section">
+  <div class="container">
+    <div class="prose">
+      <p class="section-label">Updates</p>
+      <h1>{{ page.title }}</h1>
+      {% if page.date %}
+      <p class="post-card__date" style="margin-bottom:2rem;">
+        {{ page.date | date: "%B %-d, %Y" }}
+      </p>
+      {% endif %}
+      {% if page.image %}
+      <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" style="border-radius:10px;margin-bottom:2rem;width:100%;">
+      {% endif %}
+      {{ content }}
+    </div>
+  </div>
+</section>

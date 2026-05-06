@@ -1,0 +1,93 @@
+---
+layout: default
+title: Home
+description: The English Students' Society website is the hub for all things ESS related. Find out about club updates, news, and events.
+---
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero__bg" src="{{ '/assets/images/hero-bg.jpg' | relative_url }}" alt="">
+  <div class="hero__overlay"></div>
+  <div class="container hero__content">
+    <h1>English Students' Society</h1>
+    <p>The official student club for all things literature, writing, language, and community at the University of Lethbridge.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScDlNhtgdBipogICLgk6ISLHUjMX2PBnX4CRhhaoR7VmoGiFw/viewform?usp=header" class="btn btn--outline-light" target="_blank" rel="noopener">Join Now</a>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="section">
+  <div class="container">
+    <div class="mission">
+      <div class="mission__text">
+        <p class="section-label">Who We Are</p>
+        <h2>Our Mission</h2>
+        <p>The English Students' Society is the ULSU ratified club for all and any interested in English literature, writing, language, and related fields at the University of Lethbridge. The purpose of the English Students' Society is to foster community among students and the broader community.</p>
+        <p>The ESS shall pursue this purpose by promoting academic, creative, and professional development; encouraging collaboration and mentorship; and creating opportunities for discussion, learning, and community-building.</p>
+        <a href="{{ '/about/' | relative_url }}" class="btn btn--outline" style="margin-top:0.5rem;">Learn More</a>
+      </div>
+      <div class="mission__image">
+        <img src="{{ '/assets/images/about-bg.jpg' | relative_url }}" alt="Students studying">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS & EVENTS -->
+<section class="section section--alt">
+  <div class="container">
+    <div class="section-header">
+      <p class="section-label">Latest</p>
+      <h2>News and Events</h2>
+    </div>
+    <div class="posts-grid">
+      {% for post in site.posts limit:3 %}
+      <article class="post-card">
+        {% if post.image %}
+        <div class="post-card__image">
+          <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+        </div>
+        {% endif %}
+        <div class="post-card__body">
+          <p class="post-card__date">{{ post.date | date: "%B %-d, %Y" }}</p>
+          <h3 class="post-card__title">{{ post.title }}</h3>
+          {% if post.excerpt %}
+          <p class="post-card__excerpt">{{ post.excerpt | strip_html | truncate: 100 }}</p>
+          {% endif %}
+          <a href="{{ post.url | relative_url }}" class="post-card__link">Read More →</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    <div class="view-all">
+      <a href="{{ '/updates/' | relative_url }}" class="btn btn--outline">View All Updates</a>
+    </div>
+  </div>
+</section>
+
+<!-- OPPORTUNITIES -->
+<section class="section">
+  <div class="container">
+    <div class="opportunities">
+      <div class="opportunities__image">
+        <img src="{{ '/assets/images/opportunities-bg.jpg' | relative_url }}" alt="Students collaborating">
+      </div>
+      <div class="opportunities__text">
+        <p class="section-label">Get the most out of your English degree</p>
+        <h2>Opportunities</h2>
+        <p>Being interested in English is exciting! The ESS keeps track of opportunities available to current English students, from course-related opportunities to jobs and other valuable experiences. Our goal is to help you thrive during your degree and graduate with meaningful experience and networks in your field.</p>
+        <a href="{{ '/opportunities/' | relative_url }}" class="btn btn--outline" style="margin-top:0.5rem;">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONNECT -->
+<section class="section section--dark">
+  <div class="container" style="text-align:center;max-width:600px;">
+    <p class="section-label" style="color:var(--color-accent-light);">Reach Out</p>
+    <h2>Connect with Us</h2>
+    <p>Have a question, suggestion, or just want to get involved? We'd love to hear from you.</p>
+    <a href="{{ '/contact/' | relative_url }}" class="btn btn--outline-light" style="margin-top:1rem;">Get in Touch</a>
+  </div>
+</section>
