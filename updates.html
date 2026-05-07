@@ -10,35 +10,38 @@ description: The English Students' Society is proud to host many events each aca
   </div>
 </div>
 
-<section>
-<div class="cards">
-  {% for post in site.posts %}
-    <article class="card">
-      <a href="{{ post.url | relative_url }}" class="card__link-wrap">
-        {% if post.image %}
-          <div class="card__thumb">
-            <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
-          </div>
-        {% endif %}
-
-        <div class="card__body">
-          <div class="card__meta">
-            <span>{{ post.date | date: "%b %-d, %Y" }}</span>
-            {% if post.category %}
-              <span class="card__tag">{{ post.category }}</span>
+<section class="section">
+  <div class="wrap">
+    <div class="cards">
+      {% for post in site.posts %}
+        <article class="card">
+          <a href="{{ post.url | relative_url }}" class="card__link-wrap">
+            {% if post.image %}
+              <div class="card__thumb">
+                <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+              </div>
             {% endif %}
-          </div>
 
-          <h3 class="card__title">{{ post.title }}</h3>
+            <div class="card__body">
+              <div class="card__meta">
+                <span>{{ post.date | date: "%b %-d, %Y" }}</span>
 
-          {% if post.description %}
-            <p class="card__excerpt">{{ post.description }}</p>
-          {% endif %}
+                {% if post.category %}
+                  <span class="card__tag">{{ post.category }}</span>
+                {% endif %}
+              </div>
 
-          <span class="card__read-more">Read More →</span>
-        </div>
-      </a>
-    </article>
-  {% endfor %}
-</div>
+              <h3 class="card__title">{{ post.title }}</h3>
+
+              {% if post.description %}
+                <p class="card__excerpt">{{ post.description }}</p>
+              {% endif %}
+
+              <span class="card__read-more">Read More →</span>
+            </div>
+          </a>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
 </section>

@@ -1020,6 +1020,12 @@ p:last-child {
   background: var(--bg-alt);
   padding: 5rem 0 3.75rem;
   border-bottom: 1px solid var(--primary);
+  text-align: center;
+}
+
+.blog-header h1 {
+  margin-bottom: 0;
+  text-align: center;
 }
 
 /* ============================================================
