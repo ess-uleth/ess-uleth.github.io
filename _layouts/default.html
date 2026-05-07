@@ -2,21 +2,63 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{{ page.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   </head>
   <body>
-    <nav>
-      <a href="{{ '/' | relative_url }}">Home</a>
-      <a href="{{ '/blog/' | relative_url }}">Blog</a>
-    </nav>
+
+    <header class="nav">
+      <div class="nav__inner">
+        <a class="nav__brand" href="{{ '/' | relative_url }}">
+          <img class="nav__logo" src="{{ '/assets/images/logo.png' | relative_url }}" alt="English Students' Society logo">
+          <span class="nav__site-name">English Students' Society</span>
+        </a>
+
+        <button class="nav__toggle" aria-label="Open navigation" onclick="document.querySelector('.nav__links').classList.toggle('open')">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav__links">
+          <a href="{{ '/' | relative_url }}">Home</a>
+          <a href="{{ '/about/' | relative_url }}">About</a>
+          <a href="{{ '/updates/' | relative_url }}">Updates</a>
+          <a href="{{ '/opportunities/' | relative_url }}">Opportunities</a>
+          <a href="{{ '/contact/' | relative_url }}">Contact</a>
+        </nav>
+      </div>
+    </header>
 
     <main>
       {{ content }}
     </main>
 
-    <footer>
-      &copy; to me
+    <section class="land-ack">
+      <div class="wrap">
+        <strong>Iniskim</strong><br>
+        University of Lethbridge<br>
+        Our University’s Blackfoot name is Iniskim, meaning Sacred Buffalo Stone. The University of Lethbridge acknowledges and deeply appreciates the Siksikaitsitapii peoples’ connection to their traditional territory. We honour the traditions of people who have cared for this land since time immemorial.
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="wrap footer__inner">
+        <div class="footer__copy">
+          © 2026 by the English Students' Society. All Rights Reserved.
+        </div>
+
+        <div class="footer__socials">
+          <a href="{{ site.social.instagram }}" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn">IN</a>
+          <a href="{{ site.social.twitter }}" target="_blank" rel="noopener" aria-label="X">X</a>
+          <a href="{{ site.social.facebook }}" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+        </div>
+      </div>
     </footer>
+
   </body>
 </html>
