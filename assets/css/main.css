@@ -1,5 +1,5 @@
 /* ============================================================
-   ESS Jekyll Theme – Wix-inspired version
+   ESS Jekyll Theme
    English Students' Society, University of Lethbridge
    ============================================================ */
 
@@ -9,7 +9,6 @@
    DESIGN TOKENS
    ============================================================ */
 
-:root {
 :root {
   --bg: #ffffff;
   --bg-alt: #f7f7f7;
@@ -25,9 +24,7 @@
   --text: #111111;
   --muted: #555555;
   --border: #000000;
-
   --white: #ffffff;
-}
 
   --font-head: 'Cormorant Garamond', Georgia, serif;
   --font-body: 'Montserrat', Arial, sans-serif;
@@ -36,6 +33,15 @@
   --nav-h: 88px;
   --wide: 1180px;
   --prose-w: 760px;
+
+  --body-size: 1rem;
+  --small-size: 0.85rem;
+  --label-size: 0.78rem;
+
+  --h1-size: clamp(3.8rem, 7vw, 6.5rem);
+  --h2-size: clamp(2.8rem, 5vw, 4.5rem);
+  --h3-size: clamp(1.8rem, 3vw, 2.35rem);
+  --h4-size: 1.35rem;
 
   --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
   --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.13);
@@ -62,7 +68,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: var(--body-size);
   line-height: 1.75;
 }
 
@@ -96,25 +102,39 @@ h3,
 h4 {
   font-family: var(--font-head);
   color: var(--primary);
-  line-height: 0.98;
   font-weight: 600;
+  line-height: 1.05;
 }
 
 h1 {
-  font-size: clamp(4rem, 10vw, 11rem);
-  letter-spacing: -0.045em;
+  font-size: var(--h1-size);
+  letter-spacing: -0.04em;
+  margin-bottom: 1.25rem;
 }
 
 h2 {
-  font-size: clamp(3rem, 6vw, 6.2rem);
-  letter-spacing: -0.04em;
+  font-size: var(--h2-size);
+  letter-spacing: -0.035em;
   margin-bottom: 1rem;
 }
 
 h3 {
-  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  font-size: var(--h3-size);
   letter-spacing: -0.025em;
+  margin-bottom: 0.65rem;
+}
+
+h4 {
+  font-size: var(--h4-size);
+  letter-spacing: -0.015em;
   margin-bottom: 0.5rem;
+}
+
+p,
+li {
+  font-family: var(--font-body);
+  font-size: var(--body-size);
+  line-height: 1.75;
 }
 
 p {
@@ -129,10 +149,9 @@ p:last-child {
   display: block;
   margin-bottom: 0.65rem;
   font-family: var(--font-ui);
-  font-size: 0.9rem;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  text-transform: none;
+  font-size: var(--small-size);
+  font-weight: 500;
+  letter-spacing: 0.03em;
   color: var(--text);
 }
 
@@ -159,8 +178,10 @@ p:last-child {
   color: rgba(255, 255, 255, 0.78);
 }
 
+.section--dark h1,
 .section--dark h2,
-.section--dark h3 {
+.section--dark h3,
+.section--dark h4 {
   color: var(--white);
 }
 
@@ -178,7 +199,6 @@ p:last-child {
   max-width: 620px;
   margin: 0.75rem auto 0;
   color: var(--muted);
-  font-size: 1rem;
 }
 
 .section-head--left {
@@ -225,7 +245,6 @@ p:last-child {
   width: 58px;
   height: 58px;
   object-fit: contain;
-  border-radius: 0;
 }
 
 .nav__site-name {
@@ -245,7 +264,7 @@ p:last-child {
 
 .nav__links a {
   font-family: var(--font-ui);
-  font-size: 0.88rem;
+  font-size: var(--small-size);
   font-weight: 500;
   color: var(--primary);
   letter-spacing: 0.03em;
@@ -255,7 +274,6 @@ p:last-child {
 
 .nav__links a:hover,
 .nav__links a.active {
-  color: var(--primary);
   border-bottom-color: var(--primary);
 }
 
@@ -321,8 +339,9 @@ p:last-child {
 
 .hero__body h1 {
   color: var(--white);
+  font-size: var(--h1-size);
   margin: 0 auto 2rem;
-  max-width: 1500px;
+  max-width: 1200px;
   text-shadow: 0 3px 22px rgba(0, 0, 0, 0.35);
 }
 
@@ -330,7 +349,7 @@ p:last-child {
   color: rgba(255, 255, 255, 0.92);
   max-width: 680px;
   margin: 0 auto 2.25rem;
-  font-size: 1.05rem;
+  font-size: var(--body-size);
   font-weight: 400;
 }
 
@@ -343,7 +362,7 @@ p:last-child {
 }
 
 /* ============================================================
-   ABOUT / PAGE-SPECIFIC SPACING
+   PAGE-SPECIFIC SPACING
    ============================================================ */
 
 .about-welcome {
@@ -366,16 +385,15 @@ p:last-child {
   display: inline-block;
   min-width: 155px;
   padding: 0.95rem 2rem;
-  border: 2px solid #000;
+  border: 2px solid var(--primary);
   border-radius: 28px;
-  background: #fff;
-  color: #000;
+  background: var(--white);
+  color: var(--primary);
   font-family: var(--font-ui);
-  font-size: 0.95rem;
+  font-size: var(--small-size);
   font-weight: 500;
-  letter-spacing: 0;
+  letter-spacing: 0.02em;
   text-align: center;
-  text-transform: none;
   line-height: 1;
   transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
@@ -384,9 +402,9 @@ p:last-child {
 .btn--outline,
 .btn--outline-light,
 .btn--ghost {
-  background: #fff;
-  color: #000;
-  border-color: #000;
+  background: var(--white);
+  color: var(--primary);
+  border-color: var(--primary);
 }
 
 .btn:hover,
@@ -394,9 +412,9 @@ p:last-child {
 .btn--outline:hover,
 .btn--outline-light:hover,
 .btn--ghost:hover {
-  background: #000;
-  color: #fff;
-  border-color: #000;
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
 }
 
 /* ============================================================
@@ -411,7 +429,6 @@ p:last-child {
   min-height: 520px;
 }
 
-/* Text left, image right */
 .split--image-right .split__text {
   order: 1;
 }
@@ -420,7 +437,6 @@ p:last-child {
   order: 2;
 }
 
-/* Image left, text right */
 .split--image-left .split__media {
   order: 1;
 }
@@ -429,7 +445,6 @@ p:last-child {
   order: 2;
 }
 
-/* Older class support */
 .split--flip .split__media {
   order: 1;
 }
@@ -444,14 +459,14 @@ p:last-child {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #fff;
+  background: var(--white);
 }
 
 .split__text p {
   max-width: 540px;
   color: var(--text);
-  font-size: 1rem;
-  line-height: 1.8;
+  font-size: var(--body-size);
+  line-height: 1.75;
 }
 
 .split__text .btn {
@@ -462,8 +477,7 @@ p:last-child {
 .split__media {
   min-height: 520px;
   overflow: hidden;
-  box-shadow: none;
-  background: #000;
+  background: var(--primary);
 }
 
 .split__media img {
@@ -473,7 +487,6 @@ p:last-child {
   object-position: center center;
 }
 
-/* Optional reusable image-position helpers */
 .split__media--top img {
   object-position: center top;
 }
@@ -492,7 +505,7 @@ p:last-child {
 
 .split__media--contain img {
   object-fit: contain;
-  background: #000;
+  background: var(--primary);
 }
 
 /* ============================================================
@@ -509,7 +522,6 @@ p:last-child {
   background: var(--white);
   display: flex;
   flex-direction: column;
-  box-shadow: none;
   border: 1px solid rgba(0, 0, 0, 0.14);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
@@ -541,7 +553,7 @@ p:last-child {
   gap: 0.45rem;
   margin-bottom: 0.7rem;
   font-family: var(--font-ui);
-  font-size: 0.68rem;
+  font-size: var(--label-size);
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -554,22 +566,23 @@ p:last-child {
 
 .card__title {
   font-family: var(--font-head);
-  font-size: 2rem;
+  font-size: var(--h3-size);
   color: var(--primary);
   margin-bottom: 0.65rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
 }
 
 .card__excerpt {
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: var(--body-size);
   line-height: 1.65;
   margin-bottom: 1rem;
 }
 
 .card__link {
   font-family: var(--font-ui);
-  font-size: 0.78rem;
+  font-size: var(--label-size);
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -580,7 +593,6 @@ p:last-child {
 }
 
 .card__link:hover {
-  color: var(--primary);
   border-bottom-color: var(--primary);
 }
 
@@ -600,12 +612,12 @@ p:last-child {
 
 .opp-group-title {
   font-family: var(--font-ui);
-  font-size: 0.78rem;
+  font-size: var(--label-size);
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--primary);
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid var(--primary);
   padding-bottom: 0.65rem;
   margin-bottom: 1.75rem;
 }
@@ -617,17 +629,17 @@ p:last-child {
 
 .opp-item {
   background: var(--white);
-  border: 1px solid #000;
+  border: 1px solid var(--primary);
   padding: 1.6rem 1.8rem;
 }
 
 .opp-item h3 {
-  font-size: 2rem;
+  font-size: var(--h3-size);
 }
 
 .opp-item p {
   color: var(--muted);
-  font-size: 0.95rem;
+  font-size: var(--body-size);
 }
 
 .opp-item .btn {
@@ -647,7 +659,7 @@ p:last-child {
 
 .team-card {
   background: var(--white);
-  border: 1px solid #000;
+  border: 1px solid var(--primary);
   padding: 2rem 1.25rem;
   text-align: center;
 }
@@ -669,16 +681,17 @@ p:last-child {
 
 .team-card__name {
   font-family: var(--font-head);
-  font-size: 1.8rem;
+  font-size: var(--h3-size);
   color: var(--primary);
   margin-bottom: 0.25rem;
+  line-height: 1.05;
 }
 
 .team-card__role {
   font-family: var(--font-ui);
-  font-size: 0.72rem;
+  font-size: var(--label-size);
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--primary);
 }
@@ -694,7 +707,7 @@ p:last-child {
   display: flex;
   gap: 2rem;
   align-items: flex-start;
-  border: 1px solid #000;
+  border: 1px solid var(--primary);
 }
 
 .constitution-block__icon {
@@ -729,7 +742,7 @@ p:last-child {
 
 .contact-info__link {
   font-family: var(--font-ui);
-  font-size: 0.92rem;
+  font-size: var(--body-size);
   color: var(--text);
 }
 
@@ -752,6 +765,7 @@ p:last-child {
   height: 42px;
   border: 1px solid var(--primary);
   color: var(--primary);
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .social-icon:hover {
@@ -771,7 +785,7 @@ p:last-child {
 
 .form-field label {
   font-family: var(--font-ui);
-  font-size: 0.82rem;
+  font-size: var(--small-size);
   font-weight: 600;
   color: var(--primary);
 }
@@ -781,10 +795,10 @@ p:last-child {
 .form-field select {
   width: 100%;
   padding: 0.8rem 0.9rem;
-  border: 1px solid #000;
+  border: 1px solid var(--primary);
   background: var(--white);
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: var(--body-size);
   color: var(--text);
 }
 
@@ -807,7 +821,7 @@ p:last-child {
 .prose {
   max-width: var(--prose-w);
   margin: 0 auto;
-  font-size: 1rem;
+  font-size: var(--body-size);
   line-height: 1.85;
 }
 
@@ -836,7 +850,7 @@ p:last-child {
 }
 
 .prose blockquote {
-  border-left: 3px solid #000;
+  border-left: 3px solid var(--primary);
   padding-left: 1.25rem;
   margin: 1.5rem 0;
   color: var(--muted);
@@ -858,7 +872,7 @@ p:last-child {
 
 .post-meta {
   font-family: var(--font-ui);
-  font-size: 0.8rem;
+  font-size: var(--small-size);
   color: var(--muted);
   display: flex;
   gap: 1rem;
@@ -882,7 +896,7 @@ p:last-child {
   display: inline-block;
   margin-bottom: 2rem;
   font-family: var(--font-ui);
-  font-size: 0.85rem;
+  font-size: var(--small-size);
   font-weight: 600;
   color: var(--primary);
   border-bottom: 1px solid var(--primary);
@@ -895,7 +909,7 @@ p:last-child {
 .blog-header {
   background: var(--bg-alt);
   padding: 5rem 0 3.75rem;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid var(--primary);
 }
 
 /* ============================================================
@@ -929,24 +943,24 @@ p:last-child {
   margin-left: -3rem;
   margin-right: 0;
   padding: 4.5rem 3rem;
-  background: #fff;
-  border: 2px solid #000;
+  background: var(--white);
+  border: 2px solid var(--primary);
   text-align: center;
   z-index: 2;
 }
 
 .connect-feature__panel h2 {
-  color: #000;
-  margin-bottom: 0.6rem;
-  font-size: clamp(3.8rem, 6vw, 7rem);
-  line-height: 0.95;
+  color: var(--primary);
+  font-size: var(--h2-size);
+  line-height: 1.05;
+  margin-bottom: 1rem;
 }
 
 .connect-feature__panel p {
-  color: #000;
-  font-family: var(--font-head);
-  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
-  line-height: 1.2;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: var(--body-size);
+  line-height: 1.75;
   margin-bottom: 2rem;
 }
 
@@ -956,44 +970,43 @@ p:last-child {
 
 .land-ack {
   background: var(--bg-alt);
-  color: #000;
+  color: var(--primary);
   padding: 4.5rem 2rem 3.5rem;
-  border-top: 0;
   text-align: center;
 }
 
 .land-ack__inner {
-  max-width: 1500px;
+  max-width: var(--wide);
   margin: 0 auto;
 }
 
 .land-ack h2 {
-  color: #000;
+  color: var(--primary);
   font-family: var(--font-head);
-  font-size: clamp(5rem, 9vw, 10rem);
+  font-size: var(--h2-size);
   font-weight: 600;
-  line-height: 0.85;
-  letter-spacing: -0.05em;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
   margin: 0 0 0.8rem;
 }
 
 .land-ack__subtitle {
-  color: #000;
+  color: var(--primary);
   font-family: var(--font-head);
-  font-size: clamp(4rem, 7vw, 8.5rem);
+  font-size: var(--h3-size);
   font-weight: 600;
-  line-height: 0.9;
-  letter-spacing: -0.05em;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
   margin: 0 0 2.5rem;
 }
 
 .land-ack__text {
-  max-width: 1620px;
+  max-width: 900px;
   margin: 0 auto 3.5rem;
-  color: #000;
+  color: var(--text);
   font-family: var(--font-body);
-  font-size: clamp(1.2rem, 2vw, 2.35rem);
-  line-height: 1.22;
+  font-size: var(--body-size);
+  line-height: 1.75;
   font-weight: 400;
   text-align: left;
 }
@@ -1006,42 +1019,25 @@ p:last-child {
 }
 
 .land-ack__socials a {
-  width: 4.7rem;
-  height: 4.7rem;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  background: #000;
-  color: #fff;
+  background: var(--primary);
+  color: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-ui);
-  font-size: 2.2rem;
+  font-size: 1.4rem;
   font-weight: 700;
   line-height: 1;
+  border: 2px solid var(--primary);
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
 .land-ack__socials a:hover {
-  background: #fff;
-  color: #000;
-  outline: 2px solid #000;
-}
-
-@media (max-width: 768px) {
-  .land-ack {
-    padding: 3.5rem 1.25rem 3rem;
-  }
-
-  .land-ack__text {
-    text-align: center;
-    font-size: 1.05rem;
-    line-height: 1.55;
-  }
-
-  .land-ack__socials a {
-    width: 3.2rem;
-    height: 3.2rem;
-    font-size: 1.4rem;
-  }
+  background: var(--white);
+  color: var(--primary);
 }
 
 /* ============================================================
@@ -1052,10 +1048,12 @@ p:last-child {
   background: var(--white);
   color: var(--muted);
   padding: 2rem 0;
-  border-top: 1px solid #000;
+  border-top: 1px solid var(--primary);
 }
 
 .footer__inner {
+  width: min(var(--wide), calc(100% - 3rem));
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1065,7 +1063,7 @@ p:last-child {
 
 .footer__copy {
   font-family: var(--font-ui);
-  font-size: 0.8rem;
+  font-size: var(--small-size);
 }
 
 .footer__socials {
@@ -1077,18 +1075,18 @@ p:last-child {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: #000;
-  color: #fff;
+  background: var(--primary);
+  color: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #000;
+  border: 2px solid var(--primary);
   transition: background 0.2s ease, color 0.2s ease;
 }
 
 .footer__socials a:hover {
-  background: #000;
-  color: #fff;
+  background: var(--white);
+  color: var(--primary);
 }
 
 .footer__socials svg {
@@ -1150,6 +1148,10 @@ p:last-child {
 @media (max-width: 768px) {
   :root {
     --nav-h: 76px;
+
+    --h1-size: 3.4rem;
+    --h2-size: 2.7rem;
+    --h3-size: 1.9rem;
   }
 
   .nav__logo {
@@ -1173,7 +1175,7 @@ p:last-child {
     left: 0;
     right: 0;
     background: var(--white);
-    border-top: 1px solid #000;
+    border-top: 1px solid var(--primary);
     padding: 1.2rem 1.5rem 1.5rem;
     flex-direction: column;
     align-items: flex-start;
@@ -1193,16 +1195,20 @@ p:last-child {
     padding: 5rem 0;
   }
 
-  .hero__body p {
-    font-size: 0.98rem;
-  }
-
   .section {
     padding: 4.25rem 0;
   }
 
   .section-head {
     margin-bottom: 2.75rem;
+  }
+
+  .land-ack {
+    padding: 3.5rem 1.25rem 3rem;
+  }
+
+  .land-ack__text {
+    text-align: center;
   }
 
   .footer__inner {
@@ -1223,20 +1229,9 @@ p:last-child {
 @media (max-width: 500px) {
   .wrap,
   .nav__inner,
-  .hero__body {
+  .hero__body,
+  .footer__inner {
     width: min(100% - 2rem, var(--wide));
-  }
-
-  h1 {
-    font-size: 3.6rem;
-  }
-
-  h2 {
-    font-size: 3rem;
-  }
-
-  .connect-feature__panel h2 {
-    font-size: 3.2rem;
   }
 
   .btn {
