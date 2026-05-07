@@ -137,6 +137,16 @@ li {
   line-height: 1.75;
 }
 
+/* Body/prose text justification */
+p,
+.prose li,
+.split__text li,
+.opp-item li,
+.constitution-block li,
+.contact-info li {
+  text-align: justify;
+}
+
 p {
   margin-bottom: 1rem;
 }
@@ -483,7 +493,7 @@ p:last-child {
 .split__media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
 }
 
