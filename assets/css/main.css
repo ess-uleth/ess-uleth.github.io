@@ -613,47 +613,74 @@ p:last-child {
 }
 
 /* ============================================================
-   OPPORTUNITIES PAGE
+   OPPORTUNITIES HUB PAGE
    ============================================================ */
 
-.opp-group {
-  margin-bottom: 3.5rem;
+.opportunities-header {
+  text-align: center;
 }
 
-.opp-group-title {
-  font-family: var(--font-ui);
-  font-size: var(--label-size);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--primary);
-  border-bottom: 1px solid var(--primary);
-  padding-bottom: 0.65rem;
-  margin-bottom: 1.75rem;
+.opportunities-header h1 {
+  margin-bottom: 1rem;
 }
 
-.opp-list {
-  display: grid;
-  gap: 1.2rem;
-}
-
-.opp-item {
-  background: var(--white);
-  border: 1px solid var(--primary);
-  padding: 1.6rem 1.8rem;
-}
-
-.opp-item h3 {
-  font-size: var(--h3-size);
-}
-
-.opp-item p {
+.opportunities-header p {
+  max-width: 720px;
+  margin: 0 auto;
   color: var(--muted);
   font-size: var(--body-size);
+  line-height: 1.75;
+  text-align: center;
 }
 
-.opp-item .btn {
-  margin-top: 1rem;
+.opportunities-section {
+  padding-top: 5rem;
+}
+
+.opportunity-category {
+  margin-bottom: 5rem;
+}
+
+.opportunity-category:last-child {
+  margin-bottom: 0;
+}
+
+.opportunity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.opportunity-card {
+  background: var(--white);
+  border: 1px solid var(--primary);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 260px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.opportunity-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.opportunity-card h3 {
+  font-size: var(--h3-size);
+  margin-bottom: 0.75rem;
+}
+
+.opportunity-card p {
+  color: var(--muted);
+  font-size: var(--body-size);
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.opportunity-card .card__read-more {
+  margin-top: auto;
 }
 
 /* ============================================================
@@ -1358,5 +1385,17 @@ p:last-child {
   .team-grid {
     grid-template-columns: 240px;
     justify-content: center;
+  }
+}
+
+@media (max-width: 900px) {
+  .opportunity-grid {
+    grid-template-columns: 1fr;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .opportunity-card {
+    min-height: 0;
   }
 }
