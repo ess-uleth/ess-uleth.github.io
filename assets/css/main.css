@@ -338,6 +338,18 @@ p:last-child {
   padding: 4.5rem 0;
 }
 
+.about-welcome {
+  padding-top: 7rem;
+}
+
+.about-welcome h1 {
+  margin-bottom: 1.5rem;
+}
+
+.constitution-section {
+  background: var(--bg);
+}
+
 /* ============================================================
    BUTTONS
    ============================================================ */
