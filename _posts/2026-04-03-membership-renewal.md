@@ -3,7 +3,7 @@ layout: post
 title: "Membership and Mailing List Renewal"
 date: 2026-04-03
 category: News
-image: https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=1200&q=80
+image: assets/img/year-end-mail.png
 description: Time to join for the 2026/2027 year! As we prepare for a new academic year, the ESS is updating our membership and mailing list.
 ---
 

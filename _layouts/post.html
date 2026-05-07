@@ -1,64 +1,162 @@
----
-layout: default
----
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<article>
-  <section class="section">
-    <div class="wrap">
-      <a href="{{ '/updates/' | relative_url }}" class="back-link">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-        All Updates
-      </a>
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
 
-      <div class="prose">
-        <div class="post-header">
-          <span class="eyebrow">
-            {% if page.category %}{{ page.category }}{% else %}Updates{% endif %}
-          </span>
-          <h1>{{ page.title }}</h1>
-          <div class="post-meta">
-            <span>{{ page.date | date: "%B %-d, %Y" }}</span>
-            {% if page.author %}<span>· {{ page.author }}</span>{% endif %}
-          </div>
-        </div>
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  </head>
 
-        {% if page.image %}
-        <div class="post-hero-img">
-          <img src="{{ page.image }}" alt="{{ page.title }}">
-        </div>
-        {% endif %}
+  <body>
+    <header class="nav">
+      <div class="nav__inner">
+        <a class="nav__brand" href="{{ '/' | relative_url }}">
+          <img class="nav__logo" src="{{ '/assets/img/logo.png' | relative_url }}" alt="English Students' Society logo">
+          <span class="nav__site-name">English Students' Society</span>
+        </a>
 
-        {{ content }}
+        <button class="nav__toggle" aria-label="Open navigation" onclick="document.querySelector('.nav__links').classList.toggle('open')">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="nav__links">
+          <a href="{{ '/' | relative_url }}">Home</a>
+          <a href="{{ '/about/' | relative_url }}">About</a>
+          <a href="{{ '/updates/' | relative_url }}">Updates</a>
+          <a href="{{ '/opportunities/' | relative_url }}">Opportunities</a>
+          <a href="{{ '/contact/' | relative_url }}">Contact</a>
+        </nav>
       </div>
-    </div>
-  </section>
-</article>
+    </header>
 
-<!-- Recent posts -->
-<section class="section section--alt" style="padding-top:3rem;padding-bottom:3rem;">
-  <div class="wrap">
-    <div class="section-head section-head--left" style="margin-bottom:1.5rem;">
-      <h2 style="font-size:1.3rem;">More Updates</h2>
-    </div>
-    <div class="cards">
-      {% assign other_posts = site.posts | where_exp: "p", "p.url != page.url" | limit: 3 %}
-      {% for post in other_posts %}
-      <article class="card">
-        {% if post.image %}
-        <div class="card__thumb">
-          <img src="{{ post.image }}" alt="{{ post.title }}">
-        </div>
-        {% endif %}
-        <div class="card__body">
-          <div class="card__meta">
-            <span>{{ post.date | date: "%b %-d, %Y" }}</span>
-            {% if post.category %}<span class="card__tag">{{ post.category }}</span>{% endif %}
+    <main>
+      <article class="post-page">
+        <section class="section post-section">
+          <div class="wrap">
+            <a href="{{ '/updates/' | relative_url }}" class="back-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M19 12H5M12 5l-7 7 7 7"/>
+              </svg>
+              All Updates
+            </a>
+
+            <div class="prose post-content">
+              <header class="post-header">
+                <span class="eyebrow">
+                  {% if page.category %}
+                    {{ page.category }}
+                  {% else %}
+                    Updates
+                  {% endif %}
+                </span>
+
+                <h1>{{ page.title }}</h1>
+
+                <div class="post-meta">
+                  <span>{{ page.date | date: "%B %-d, %Y" }}</span>
+
+                  {% if page.author %}
+                    <span>{{ page.author }}</span>
+                  {% endif %}
+                </div>
+              </header>
+
+              {% if page.image %}
+                <div class="post-hero-img">
+                  <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+                </div>
+              {% endif %}
+
+              {{ content }}
+            </div>
           </div>
-          <h3 class="card__title">{{ post.title }}</h3>
-          <a href="{{ post.url | relative_url }}" class="card__link">Read More →</a>
-        </div>
+        </section>
       </article>
-      {% endfor %}
-    </div>
-  </div>
-</section>
+
+      <section class="section section--alt more-updates-section">
+        <div class="wrap">
+          <div class="section-head section-head--left more-updates-head">
+            <h2>More Updates</h2>
+          </div>
+
+          <div class="cards more-updates-grid">
+            {% assign other_posts = site.posts | where_exp: "post", "post.url != page.url" | limit: 3 %}
+
+            {% for post in other_posts %}
+              <article class="card">
+                {% if post.image %}
+                  <div class="card__thumb">
+                    <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+                  </div>
+                {% endif %}
+
+                <div class="card__body">
+                  <div class="card__meta">
+                    <span>{{ post.date | date: "%b %-d, %Y" }}</span>
+
+                    {% if post.category %}
+                      <span class="card__tag">{{ post.category }}</span>
+                    {% endif %}
+                  </div>
+
+                  <h3 class="card__title">{{ post.title }}</h3>
+
+                  <a href="{{ post.url | relative_url }}" class="card__link">
+                    Read More →
+                  </a>
+                </div>
+              </article>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer__inner">
+        <div class="footer__copy">
+          © 2026 by the English Students' Society. All Rights Reserved.
+        </div>
+
+        <div class="footer__socials">
+          {% if site.social.instagram %}
+            <a href="{{ site.social.instagram }}" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 4.2A3.8 3.8 0 1 1 12 15.8 3.8 3.8 0 0 1 12 8.2Zm0 2A1.8 1.8 0 1 0 12 13.8 1.8 1.8 0 0 0 12 10.2ZM17.5 6.5a1 1 0 1 1-1 1 1 1 0 0 1 1-1Z"/>
+              </svg>
+            </a>
+          {% endif %}
+
+          {% if site.social.linkedin %}
+            <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5ZM3 10h4v11H3V10Zm6 0h3.8v1.5h.05A4.1 4.1 0 0 1 16.6 9.7c4 0 4.7 2.6 4.7 6V21h-4v-4.8c0-1.15 0-2.65-1.6-2.65s-1.85 1.25-1.85 2.55V21H9V10Z"/>
+              </svg>
+            </a>
+          {% endif %}
+
+          {% if site.social.twitter %}
+            <a href="{{ site.social.twitter }}" target="_blank" rel="noopener" aria-label="X">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M14.6 10.6 22 2h-2.1l-6.2 7.2L8.8 2H2.5l7.8 11.3L2 22h2.1l7.1-7.4L16.3 22h6.3l-8-11.4Zm-2.5 2.6-.8-1.1L5.1 3.6h2.7l5 7 .8 1.1 6.5 8.8h-2.7l-5.3-7.3Z"/>
+              </svg>
+            </a>
+          {% endif %}
+
+          {% if site.social.facebook %}
+            <a href="{{ site.social.facebook }}" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M14 8h3V4h-3c-3.3 0-5 2-5 5v3H6v4h3v6h4v-6h3.3l.7-4h-4V9.2c0-.8.3-1.2 1-1.2Z"/>
+              </svg>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

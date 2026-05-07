@@ -3,7 +3,7 @@ layout: post
 title: "Year End Celebration!"
 date: 2026-04-05
 category: Events
-image: https://images.unsplash.com/photo-1527529482837-4698179dc6ce?w=1200&q=80
+image: assets/img/grad.png
 description: Join the ESS and the English Department for the Year End Celebration — April 14th at 4:30 in SU Ballroom B.
 ---
 
