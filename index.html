@@ -8,16 +8,20 @@ description: The English Students' Society website is the hub for all things ESS
      HERO
 ════════════════════════════════ -->
 <section class="hero">
-  <!-- Replace hero-bg.jpg with any photo of books, campus, students, etc. -->
   <img class="hero__bg"
        src="{{ '/assets/img/home.png' | relative_url }}"
        alt="English Students Society">
+
   <div class="hero__overlay"></div>
+
   <div class="hero__body wrap">
     <h1>English Students' Society</h1>
     <p>The official ULSU-ratified club for anyone interested in literature, writing, language, and community at the University of Lethbridge.</p>
+
     <a href="https://docs.google.com/forms/d/e/1FAIpQLScDlNhtgdBipogICLgk6ISLHUjMX2PBnX4CRhhaoR7VmoGiFw/viewform?usp=header"
-       class="btn btn--outline-light" target="_blank" rel="noopener">Join Now</a>
+       class="btn btn--outline-light"
+       target="_blank"
+       rel="noopener">Join Now</a>
   </div>
 </section>
 
@@ -31,14 +35,17 @@ description: The English Students' Society website is the hub for all things ESS
       <div class="split__text">
         <span class="eyebrow">Who We Are</span>
         <h2>Our Mission</h2>
+
         <p>The English Students' Society is the ULSU ratified club for all and any interested in English literature, writing, language, and related fields at the University of Lethbridge.</p>
+
         <p>The purpose of the ESS is to foster community among students and the broader community by promoting academic, creative, and professional development; encouraging collaboration and mentorship; and creating opportunities for discussion, learning, and community-building.</p>
+
         <a href="{{ '/about/' | relative_url }}" class="btn btn--outline">Learn More</a>
       </div>
 
       <div class="split__media">
         <img src="{{ '/assets/img/mission.png' | relative_url }}"
-             alt="English Students Society">
+             alt="Books and English Students Society materials">
       </div>
     </div>
   </div>
@@ -61,18 +68,24 @@ description: The English Students' Society website is the hub for all things ESS
       <article class="card">
         {% if post.image %}
         <div class="card__thumb">
-          <img src="{{ post.image }}" alt="{{ post.title }}">
+          <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
         </div>
         {% endif %}
+
         <div class="card__body">
           <div class="card__meta">
             <span>{{ post.date | date: "%b %-d, %Y" }}</span>
-            {% if post.category %}<span class="card__tag">{{ post.category }}</span>{% endif %}
+            {% if post.category %}
+            <span class="card__tag">{{ post.category }}</span>
+            {% endif %}
           </div>
+
           <h3 class="card__title">{{ post.title }}</h3>
+
           {% if post.excerpt %}
           <p class="card__excerpt">{{ post.excerpt | strip_html | truncate: 110 }}</p>
           {% endif %}
+
           <a href="{{ post.url | relative_url }}" class="card__link">Read More →</a>
         </div>
       </article>
@@ -94,14 +107,17 @@ description: The English Students' Society website is the hub for all things ESS
     <div class="split split--image-left">
       <div class="split__media">
         <img src="{{ '/assets/img/opportunities.png' | relative_url }}"
-             alt="English Students Society">
+             alt="Students collaborating and studying">
       </div>
 
       <div class="split__text">
         <span class="eyebrow">Get the most out of your degree</span>
         <h2>Opportunities</h2>
+
         <p>Being interested in English is exciting! The ESS keeps track of opportunities available to current English students — from co-op placements and applied studies to competitions, scholarships, and publishing experience.</p>
+
         <p>Our goal is to help you thrive during your degree and graduate with meaningful experience and networks in your field.</p>
+
         <a href="{{ '/opportunities/' | relative_url }}" class="btn btn--outline">Explore Opportunities</a>
       </div>
     </div>
@@ -114,7 +130,8 @@ description: The English Students' Society website is the hub for all things ESS
 ════════════════════════════════ -->
 <section class="connect-feature">
   <div class="connect-feature__image">
-    <img src="{{ '/assets/img/connect.jpg' | relative_url }}" alt="Open book">
+    <img src="{{ '/assets/img/connect.jpg' | relative_url }}"
+         alt="Open book">
   </div>
 
   <div class="connect-feature__panel">
@@ -133,7 +150,9 @@ description: The English Students' Society website is the hub for all things ESS
   <div class="wrap">
     <strong>Iniskim</strong>
     <p>University of Lethbridge</p>
+
     <p>Our University’s Blackfoot name is Iniskim, meaning Sacred Buffalo Stone. The University of Lethbridge acknowledges and deeply appreciates the Siksikaitsitapii peoples’ connection to their traditional territory.</p>
+
     <p>We, as people living and benefiting from Blackfoot Confederacy traditional territory, honour the traditions of people who have cared for this land since time immemorial. We recognize the diverse population of Aboriginal peoples who attend the University of Lethbridge and the contributions these Aboriginal peoples have made in shaping and strengthening the University community in the past, present, and in the future.</p>
   </div>
 </section>
