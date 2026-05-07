@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Year End Celebration!"
+title: "Year End Celebration! Poetry & Grad"
 date: 2026-04-05
 category: Events
 image: assets/img/grad.png

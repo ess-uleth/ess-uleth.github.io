@@ -3,7 +3,7 @@ layout: post
 title: "New Executive Positions!"
 date: 2026-04-04
 category: News
-image: assets/img/year-end-exec.png
+image: assets/img/exec.png
 description: As we transition into the summer, the ESS is excited to announce new executive positions open for applications.
 ---
 
