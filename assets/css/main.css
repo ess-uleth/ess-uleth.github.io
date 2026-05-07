@@ -657,18 +657,36 @@ p:last-child {
 }
 
 /* ============================================================
-   TEAM GRID
+   ABOUT PAGE + TEAM GRID
    ============================================================ */
+
+.about-welcome {
+  padding-top: 6rem;
+}
+
+.about-welcome .split__text h1 {
+  font-size: var(--h2-size);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+  margin-bottom: 1rem;
+}
+
+.about-welcome .split__text p {
+  font-size: var(--body-size);
+  line-height: 1.75;
+  color: var(--text);
+}
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  grid-template-columns: repeat(auto-fit, 240px);
   gap: 1.75rem;
-  margin-top: 2.5rem;
+  margin: 2.5rem auto 0;
   justify-content: center;
 }
 
 .team-card {
+  width: 240px;
   background: var(--white);
   border: 1px solid var(--primary);
   padding: 2rem 1.25rem;
@@ -687,24 +705,28 @@ p:last-child {
 .team-card__avatar img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center center;
 }
 
 .team-card__name {
   font-family: var(--font-head);
   font-size: var(--h3-size);
   color: var(--primary);
-  margin-bottom: 0.25rem;
   line-height: 1.05;
+  margin-bottom: 0.35rem;
+  text-align: center;
 }
 
 .team-card__role {
   font-family: var(--font-ui);
   font-size: var(--label-size);
   font-weight: 600;
+  line-height: 1.4;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--primary);
+  text-align: center;
 }
 
 /* ============================================================
@@ -1096,7 +1118,7 @@ p:last-child {
   font-size: var(--body-size);
   line-height: 1.75;
   font-weight: 400;
-  text-align: left;
+  text-align: justify;
 }
 
 .land-ack__socials {
@@ -1328,6 +1350,7 @@ p:last-child {
   }
 
   .team-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 240px;
+    justify-content: center;
   }
 }

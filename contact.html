@@ -4,93 +4,16 @@ title: Contact
 description: The English Students' Society is happy to hear feedback, thoughts, and opinions. Please contact us with any questions or concerns.
 ---
 
-<section class="section">
-  <div class="wrap">
-    <div class="section-head section-head--left" style="margin-bottom:3rem;">
-      <span class="eyebrow">Get in Touch</span>
-      <h1>We Want to Hear from You</h1>
-      <p style="color:var(--muted);max-width:500px;">We want your ideas, opinions, and thoughts. Whether you have a question, want to get involved, or have an opportunity to share — please reach out!</p>
-    </div>
+<section class="connect-feature">
+  <div class="connect-feature__image">
+    <img src="{{ '/assets/img/booktrail.png' | relative_url }}"
+         alt="Open book">
+  </div>
 
-    <div class="contact-grid">
+  <div class="connect-feature__panel">
+    <h2>We Want to Hear from You</h2>
+    <p>We want your ideas, opinions, and thoughts. Please email us!</p>
 
-      <!-- LEFT: Contact info -->
-      <div class="contact-info">
-        <h3>Reach Us Directly</h3>
-        <p>The best way to get in touch is by email. We aim to respond within a few business days.</p>
-
-        <div class="contact-info__links">
-          <div class="contact-info__link">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            <span>Email: <a href="mailto:ess.club@uleth.ca">ess.club@uleth.ca</a></span>
-          </div>
-          <div class="contact-info__link">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            <span>University of Lethbridge, Lethbridge, AB</span>
-          </div>
-        </div>
-
-        <div style="margin-top:2rem;">
-          <p class="eyebrow" style="margin-bottom:.75rem;">Follow Us</p>
-          <div class="socials-row">
-            <a href="https://www.instagram.com/ulethess/" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-            </a>
-            <a href="http://linkedin.com/groups/14498338" class="social-icon" aria-label="LinkedIn" target="_blank" rel="noopener">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            </a>
-            <a href="https://twitter.com/essuleth" class="social-icon" aria-label="X / Twitter" target="_blank" rel="noopener">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            </a>
-            <a href="https://www.facebook.com/share/g/1Q1zWMa3ff/" class="social-icon" aria-label="Facebook" target="_blank" rel="noopener">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-            </a>
-          </div>
-        </div>
-
-        <div style="margin-top:2.5rem;padding:1.5rem;background:var(--accent-pale);border-radius:var(--r-md);">
-          <p style="font-family:var(--font-ui);font-size:.85rem;color:var(--accent);font-weight:600;margin-bottom:.4rem;">📋 Join Our Mailing List</p>
-          <p style="font-size:.9rem;color:var(--muted);">Stay informed about ESS events, opportunities, and announcements by joining our mailing list via the membership form.</p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScDlNhtgdBipogICLgk6ISLHUjMX2PBnX4CRhhaoR7VmoGiFw/viewform?usp=header"
-             class="btn btn--primary" style="margin-top:1rem;font-size:.8rem;" target="_blank" rel="noopener">Join / Renew Membership</a>
-        </div>
-      </div><!-- /contact-info -->
-
-      <!-- RIGHT: Email form
-           This uses a simple mailto link. For a working backend form,
-           sign up at formspree.io (free) and replace the action URL. -->
-      <div>
-        <h3 style="margin-bottom:1.25rem;">Send Us a Message</h3>
-        <form class="contact-form"
-              action="https://formspree.io/f/YOUR_FORM_ID"
-              method="POST">
-          <!-- Swap the action above with your Formspree endpoint, OR
-               delete the form and use the direct email link on the left. -->
-          <div class="form-field">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" placeholder="Jane Smith" required>
-          </div>
-          <div class="form-field">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="jane@uleth.ca" required>
-          </div>
-          <div class="form-field">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" placeholder="What's this about?">
-          </div>
-          <div class="form-field">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Your message here…" required></textarea>
-          </div>
-          <div>
-            <button type="submit" class="btn btn--primary">Send Message</button>
-          </div>
-          <p style="font-size:.78rem;color:var(--muted);margin-top:.5rem;">
-            Or email us directly at <a href="mailto:ess.club@uleth.ca">ess.club@uleth.ca</a>
-          </p>
-        </form>
-      </div>
-
-    </div><!-- /contact-grid -->
+    <a href="mailto:ess.club@uleth.ca" class="btn">Email Us</a>
   </div>
 </section>
